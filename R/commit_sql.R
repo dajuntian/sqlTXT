@@ -33,6 +33,7 @@ commit_sql <- function(conn, code, is_file = TRUE) {
       #return data frame for select statement
       result <- DBI::dbGetQuery(conn, sql_statement)
     } else {
+      #this may not work with RJDBC
       DBI::dbExecute(conn, sql_statement)
     }
   }

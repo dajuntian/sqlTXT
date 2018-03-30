@@ -14,7 +14,13 @@ rs <- DBI::dbExecute(con, "delete from mtcars where gear = 3")
 rs <- DBI::dbSendStatement(con, "delete from mtcars where gear = 3")
 DBI::dbClearResult(rs)
 
-sqlFromText <- "select * from mtcars;delete from mtcars where gear = 3;select * from mtcars;"
+sqlFromText <- "
+--some comments
+select * from mtcars;
+delete from mtcars where gear = 3;
+alter table mtcars add new_column char(10);
+select * from mtcars;
+/*new comments*/"
 
 commit_sql(con, sqlFromText, is_file = F)
 
