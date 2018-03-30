@@ -18,7 +18,7 @@ sqlFromText <- "
 --some comments
 select * from mtcars;
 delete from mtcars where gear = 3;
-alter table mtcars add new_column char(10);
+alter table mtcars add new_column2 char(10);
 select * from mtcars;
 /*new comments*/"
 
