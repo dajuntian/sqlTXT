@@ -1,8 +1,9 @@
 Package: sqlTXT
-Title: Submit code to SQL connection and return results from the last select statement
+Title: Submit Multiple SQL Statements and Return Result From Last Select Clause
 Version: 0.0.0.1
 Authors@R: person("Dajun", "Tian", email = "tiandajun@gmail.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: Given an existing database connection and a file containg SQL code, sqlTXT separates the SQL code
+  into single query and submits it sequantially. The result of the last select is returned as a data frame.
 Depends: R (>= 3.4.0)
 License: GPL-3
 Encoding: UTF-8
