@@ -19,6 +19,9 @@ commit_sql <- function(conn, code, is_file = TRUE) {
   m <- gregexpr(pattern, code)
   code_list <- unlist(regmatches(code, m))
   
+  #initialize empty list 
+  result <- list()
+  
   #remove comments
   code_list <- gsub("(--.*)|(((/\\*)+?[\\w\\W]+?(\\*/)+))", " ", 
                     code_list, perl = T)
@@ -31,7 +34,7 @@ commit_sql <- function(conn, code, is_file = TRUE) {
     
     if (grepl("^select", sql_statement, ignore.case = T, perl = T)) {
       #return data frame for select statement
-      result <- DBI::dbGetQuery(conn, sql_statement)
+      result[[length(result) + 1]] <- DBI::dbGetQuery(conn, sql_statement)
     } else {
       #submit and release resources
       DBI::dbClearResult(DBI::dbSendStatement(conn, sql_statement))

@@ -17,10 +17,18 @@ DBI::dbClearResult(rs)
 sqlFromText <- "
 --some comments
 select * from mtcars;
+CREATE TABLE contacts (
+ contact_id integer PRIMARY KEY,
+first_name text NOT NULL,
+last_name text NOT NULL,
+email text NOT NULL UNIQUE,
+phone text NOT NULL UNIQUE
+);
 delete from mtcars where gear = 3;
-alter table mtcars add new_column2 char(10);
+alter table mtcars add snew_column3 char(10);
 select * from mtcars;
+select * from contacts;
 /*new comments*/"
 
-commit_sql(con, sqlFromText, is_file = F)
+r_r <- commit_sql(con, sqlFromText, is_file = F)
 
