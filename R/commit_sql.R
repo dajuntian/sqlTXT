@@ -3,14 +3,14 @@
 #' @param conn DBIConnection to sql server
 #' @param code Character to path to sql code
 #' @param is_file Logical indicates the code parameter refers to file name
-#' @export
+#' 
 #' @return List of data frame from the last select statement, empty if no select statment
 #' @examples 
-#'  \dontrun{
+#' \dontrun{
 #' commit_sql(conn, "/home/user/bearhunt.sql")
 #' commit_sql(conn, "select * from session.ca", is_file = F)
 #' }
-#' @seealso \url{https://github.com/dajuntian/sqlTXT}
+#' @export 
 commit_sql <- function(conn, code, is_file = TRUE) {
   if (is_file) {code <- readChar(code, file.info(code)$size)}
   
@@ -41,4 +41,6 @@ commit_sql <- function(conn, code, is_file = TRUE) {
     }
   }
   result
-} # end of commit_sql
+} 
+
+
