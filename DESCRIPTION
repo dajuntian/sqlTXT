@@ -1,6 +1,6 @@
 Package: sqlTXT
 Title: Submit Multiple SQL Statements and Return a List of Data Frames from Select
-Version: 0.0.0.1
+Version: 0.0.1
 Authors@R: person("Dajun", "Tian", email = "tiandajun@gmail.com", role = c("aut", "cre"))
 Description: Given an existing database connection and a file containing SQL code, sqlTXT separates the SQL code
   into single query and submits it sequentially. The results from select are returned as a list of
