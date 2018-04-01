@@ -28,7 +28,7 @@ delete from mtcars where gear = 3;
 alter table mtcars add snew_column3 char(10);
 select * from mtcars;
 select * from contacts;
-/*new comments*/"
+/*end of code*/"
 
 r_r <- commit_sql(con, sqlFromText, is_file = F)
 

@@ -10,6 +10,7 @@
 #' @return Data frame from the last select statement, NA if no select statment
 #' 
 #' @export
+#' @seealso \url{https://github.com/dajuntian/sqlTXT}
 
 commit_sql <- function(conn, code, is_file = TRUE) {
   if (is_file) {code <- readChar(code, file.info(code)$size)}
@@ -36,7 +37,7 @@ commit_sql <- function(conn, code, is_file = TRUE) {
       #return data frame for select statement
       result[[length(result) + 1]] <- DBI::dbGetQuery(conn, sql_statement)
     } else {
-      #submit and release resources
+      #submit and release resources for non-select clauses
       DBI::dbClearResult(DBI::dbSendStatement(conn, sql_statement))
     }
   }
