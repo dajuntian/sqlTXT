@@ -60,6 +60,9 @@ select * from contacts;
 
 result_from_sql <- sqlTXT::commit_sql(con, sqlFromText, is_file = F)
 
-for (item in result_from_sql) print(head(item))
-
+for (item in result_from_sql) {
+  cat("Date frame returned from SQL\n")
+  print(head(item))
+  cat("\n")
+}
 ```

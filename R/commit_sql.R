@@ -2,15 +2,20 @@
 #' 
 #' @param conn DBIConnection to sql server
 #' @param code Character to path to sql code
-#' @param is_file Logical indicates the code parameter refers to file name
+#' @param is_file Logical variable indicates the code parameter refers to file name
 #' 
 #' @return List of data frame from the last select statement, empty if no select statment
 #' @examples 
 #' \dontrun{
+#' drv <- RJDBC::JDBC("com.mysql.jdbc.Driver",
+#'             "/etc/jdbc/mysql-connector-java-3.1.14-bin.jar",
+#'             identifier.quote="`")
+#' conn <- DBI::dbConnect(drv, "jdbc:mysql://localhost/test", "user", "pwd")
 #' commit_sql(conn, "/home/user/bearhunt.sql")
 #' commit_sql(conn, "select * from session.ca", is_file = F)
 #' }
 #' @export 
+#' @seealso \url{https://github.com/dajuntian/sqlTXT}
 commit_sql <- function(conn, code, is_file = TRUE) {
   if (is_file) {code <- readChar(code, file.info(code)$size)}
   
