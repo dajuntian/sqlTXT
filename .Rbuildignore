@@ -3,3 +3,5 @@
 .gitignore
 _sql.R
 _test.R
+^README\.Rmd$
+^README-.*\.png$

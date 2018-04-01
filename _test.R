@@ -1,6 +1,6 @@
 # TEST CODE, NOT INCLUDED IN BUILD
 library("RSQLite")
-con <- dbConnect(RSQLite::SQLite(), ":memory:")
+con <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
 
 dbWriteTable(con, "mtcars", mtcars)
 dbListTables(con)
