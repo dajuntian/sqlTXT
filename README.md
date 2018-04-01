@@ -23,7 +23,7 @@ devtools::install_github("dajuntian/sqlTXT")
 #> Installing sqlTXT
 #> "C:/PROGRA~1/R/R-34~1.3/bin/x64/R" --no-site-file --no-environ --no-save  \
 #>   --no-restore --quiet CMD INSTALL  \
-#>   "C:/Users/David/AppData/Local/Temp/RtmpGiDmjD/devtools33546d0c483f/dajuntian-sqlTXT-4273266"  \
+#>   "C:/Users/David/AppData/Local/Temp/RtmpAd6DnB/devtools24442894fb3/dajuntian-sqlTXT-c2ff38b"  \
 #>   --library="C:/Users/David/Documents/R/win-library/3.4" --install-tests
 #> 
 ```
