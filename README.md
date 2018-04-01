@@ -18,14 +18,6 @@ You can install sqlTXT from github with:
 ``` r
 # install.packages("devtools")
 devtools::install_github("dajuntian/sqlTXT")
-#> Downloading GitHub repo dajuntian/sqlTXT@master
-#> from URL https://api.github.com/repos/dajuntian/sqlTXT/zipball/master
-#> Installing sqlTXT
-#> "C:/PROGRA~1/R/R-34~1.3/bin/x64/R" --no-site-file --no-environ --no-save  \
-#>   --no-restore --quiet CMD INSTALL  \
-#>   "C:/Users/David/AppData/Local/Temp/RtmpAd6DnB/devtools24442894fb3/dajuntian-sqlTXT-c2ff38b"  \
-#>   --library="C:/Users/David/Documents/R/win-library/3.4" --install-tests
-#> 
 ```
 
 Example
@@ -34,8 +26,6 @@ Example
 This is a basic example to show you how to use the package
 
 ``` r
-## basic example
-
 # generate DBI Connection
 con <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
 DBI::dbWriteTable(con, "mtcars", mtcars)

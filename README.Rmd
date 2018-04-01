@@ -26,7 +26,7 @@ What it returns is a list and element in the list is the data frame from select 
 
 You can install sqlTXT from github with:
 
-```{r gh-installation, eval = TRUE}
+```{r gh-installation, eval = TRUE, message=FALSE}
 # install.packages("devtools")
 devtools::install_github("dajuntian/sqlTXT")
 ```
@@ -36,8 +36,6 @@ devtools::install_github("dajuntian/sqlTXT")
 This is a basic example to show you how to use the package
 
 ```{r example}
-## basic example
-
 # generate DBI Connection
 con <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
 DBI::dbWriteTable(con, "mtcars", mtcars)
