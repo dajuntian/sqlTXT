@@ -9,7 +9,7 @@ commit_sql(conn, code, is_file = TRUE)
 \arguments{
 \item{conn}{DBIConnection to sql server}
 
-\item{code}{Character to path to sql code}
+\item{code}{Character of code or path to sql code}
 
 \item{is_file}{Logical variable indicates the code parameter refers to file name}
 }
@@ -22,7 +22,7 @@ Commit sql from file or character variable
 \examples{
 \dontrun{
 jcc <- RJDBC::JDBC("com.ibm.db2.jcc.DB2Driver", "C:/db2jcc4.jar")
-conn <- DBI::dbConnect(jcc, "jdbc:db2://hostname:12345/dbname", "user", "pwd")
+conn <- RJDBC::dbConnect(jcc, "jdbc:db2://hostname:12345/dbname", "user", "pwd")
 commit_sql(conn, "/home/user/bearhunt.sql")
 commit_sql(conn, "select * from session.ca", is_file = F)
 }
