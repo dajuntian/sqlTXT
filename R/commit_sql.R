@@ -7,10 +7,8 @@
 #' @return List of data frame from the last select statement, empty if no select statment
 #' @examples 
 #' \dontrun{
-#' drv <- RJDBC::JDBC("com.mysql.jdbc.Driver",
-#'             "/etc/jdbc/mysql-connector-java-3.1.14-bin.jar",
-#'             identifier.quote="`")
-#' conn <- DBI::dbConnect(drv, "jdbc:mysql://localhost/test", "user", "pwd")
+#' jcc <- RJDBC::JDBC("com.ibm.db2.jcc.DB2Driver", "C:/db2jcc4.jar")
+#' conn <- DBI::dbConnect(jcc, "jdbc:db2://hostname:12345/dbname", "user", "pwd")
 #' commit_sql(conn, "/home/user/bearhunt.sql")
 #' commit_sql(conn, "select * from session.ca", is_file = F)
 #' }

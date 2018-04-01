@@ -18,8 +18,14 @@ You can install sqlTXT from github with:
 ``` r
 # install.packages("devtools")
 devtools::install_github("dajuntian/sqlTXT")
-#> Skipping install of 'sqlTXT' from a github remote, the SHA1 (4f14d9a6) has not changed since last install.
-#>   Use `force = TRUE` to force installation
+#> Downloading GitHub repo dajuntian/sqlTXT@master
+#> from URL https://api.github.com/repos/dajuntian/sqlTXT/zipball/master
+#> Installing sqlTXT
+#> "C:/PROGRA~1/R/R-34~1.3/bin/x64/R" --no-site-file --no-environ --no-save  \
+#>   --no-restore --quiet CMD INSTALL  \
+#>   "C:/Users/David/AppData/Local/Temp/RtmpGiDmjD/devtools33546d0c483f/dajuntian-sqlTXT-4273266"  \
+#>   --library="C:/Users/David/Documents/R/win-library/3.4" --install-tests
+#> 
 ```
 
 Example
@@ -53,11 +59,12 @@ select * from contacts;
 result_from_sql <- sqlTXT::commit_sql(con, sqlFromText, is_file = F)
 
 for (item in result_from_sql) {
-  cat("Date frame returned from SQL")
+  cat("Date frame returned from SQL\n")
   print(head(item))
   cat("\n")
 }
-#> Date frame returned from SQL   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+#> Date frame returned from SQL
+#>    mpg cyl disp  hp drat    wt  qsec vs am gear carb
 #> 1 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
 #> 2 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
 #> 3 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
@@ -65,7 +72,8 @@ for (item in result_from_sql) {
 #> 5 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
 #> 6 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 #> 
-#> Date frame returned from SQL   mpg cyl  disp  hp drat    wt  qsec vs am gear carb snew_column3
+#> Date frame returned from SQL
+#>    mpg cyl  disp  hp drat    wt  qsec vs am gear carb snew_column3
 #> 1 21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4         <NA>
 #> 2 21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4         <NA>
 #> 3 22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1         <NA>
@@ -73,6 +81,7 @@ for (item in result_from_sql) {
 #> 5 22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2         <NA>
 #> 6 19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4         <NA>
 #> 
-#> Date frame returned from SQL[1] contact_id first_name last_name  email      phone     
+#> Date frame returned from SQL
+#> [1] contact_id first_name last_name  email      phone     
 #> <0 rows> (or 0-length row.names)
 ```
