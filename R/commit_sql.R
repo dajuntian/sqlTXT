@@ -40,7 +40,14 @@ commit_sql <- function(conn, code, is_file = TRUE) {
       result[[length(result) + 1]] <- DBI::dbGetQuery(conn, sql_statement)
     } else {
       #submit and release resources for non-select clauses
-      DBI::dbClearResult(DBI::dbSendStatement(conn, sql_statement))
+      #check if it is RJDBC
+      if (attr(class(conn), "package") == "RJDBC"){
+        RJDBC::dbSendUpdate(conn, sql_statement)
+      }
+      else {
+        DBI::dbClearResult(DBI::dbSendStatement(conn, sql_statement))
+      }
+     
     }
   }
   result
