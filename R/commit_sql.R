@@ -13,7 +13,7 @@
 #' commit_sql(conn, "select * from session.ca", is_file = F)
 #' }
 #' @export 
-#' @seealso \url{https://github.com/dajuntian/sqlTXT}
+#' @seealso \url{http://github.com/dajuntian/sqlTXT}
 commit_sql <- function(conn, code, is_file = TRUE) {
   if (is_file) {code <- readChar(code, file.info(code)$size)}
   
