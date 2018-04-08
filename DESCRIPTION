@@ -6,6 +6,7 @@ Description: Given an existing database connection and a file containing SQL cod
   into single query and submits it sequentially. The results from select are returned as a list of
   data frames. If comments are in the code, it should only use the form of "--comment" at
   the beginning of the line.
+  Limitation: Works with RJDBC only for now.
 Depends: R (>= 3.3.0)
 License: GPL-3
 Encoding: UTF-8
