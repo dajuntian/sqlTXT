@@ -2,9 +2,9 @@
 #' 
 #' @param conn DBIConnection to sql server
 #' @param code Character of code or path to sql code
-#' @param is_file Logical variable indicates the code parameter refers to file name
+#' @param is_file Logical variable indicates the code parameter refers to file name, defaults to TRUE
 #' 
-#' @return List of data frame from the last select statement, empty if no select statment
+#' @return List of data frames from all select statement, empty if no select statment
 #' @examples 
 #' \dontrun{
 #' jcc <- RJDBC::JDBC("com.ibm.db2.jcc.DB2Driver", "C:/db2jcc4.jar")

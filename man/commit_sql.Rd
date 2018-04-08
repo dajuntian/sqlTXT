@@ -11,10 +11,10 @@ commit_sql(conn, code, is_file = TRUE)
 
 \item{code}{Character of code or path to sql code}
 
-\item{is_file}{Logical variable indicates the code parameter refers to file name}
+\item{is_file}{Logical variable indicates the code parameter refers to file name, defaults to TRUE}
 }
 \value{
-List of data frame from the last select statement, empty if no select statment
+List of data frames from all select statement, empty if no select statment
 }
 \description{
 Commit sql from file or character variable
