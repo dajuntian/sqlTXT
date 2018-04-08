@@ -1,6 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-![](http://www.r-pkg.org/badges/version/sqlTXT) \# sqlTXT
+sqlTXT
+======
 
 The goal of sqlTXT is to submit multiple SQL statements through a single function call and to get results as a list of data frames.
 
